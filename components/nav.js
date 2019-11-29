@@ -9,13 +9,13 @@ const Nav = (props) => {
       {style}
         <header>
             <div className="navbar">
-                <div className="logo">LOGO</div>
+                <div className="logo"><a href="#"><Link href="/">こどうぐ</Link></a></div>
                 <nav className={toggle ? "active" : ""}>
                     <ul>
-                        <li><a href="#" className="active">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" className="active"><Link href="/">HOME</Link></a></li>
+                        <li><a href="#"><Link href="/gentext">ダミー文生成</Link></a></li>
+                        <li><a href="#"><Link href="/pwg">パスワード生成</Link></a></li>
+                        <li><a href="#"><Link href="/markdown">マークダウン・エディター</Link></a></li>
                     </ul>
                 </nav>
             </div>
@@ -29,10 +29,11 @@ const Nav = (props) => {
                 { props.children }
             </div>
             <div className="right">
-                <div className="title">Title</div>
-                <div className="list">Calculator</div>
-                <div className="list"><Link href="/pwg">Password Generator</Link></div>
-                <div className="list"><Link href="/markdown">Markdown Editor</Link></div>
+                <div className="title">コンテンツ</div>
+                <div className="list"><Link href="/gentext">ダミー文生成</Link></div>
+                <div className="list"><Link href="/pwg">パスワード生成</Link></div>
+                <div className="list"><Link href="/markdown">マークダウン・エディター</Link></div>
+                
             </div>
             
         </div>
@@ -88,6 +89,11 @@ header .logo {
     padding: 0 40px;
 }
 
+header .logo a {
+    text-decoration: none;
+    color: white;
+}
+
 header nav {
     float: right;
 }
@@ -105,10 +111,11 @@ header nav ul li {
 header nav ul li a {
     height: 50px;
     line-height: 50px;
-    padding: 0 40px;
+    padding: 0 20px;
     color: #fff;
     text-decoration: none;
     display: block;
+    font-size: 0.825rem;
 }
 
 header nav ul li a:hover,
@@ -178,6 +185,7 @@ header nav ul li a.active {
 
 .right {
     width: 300px;
+    height: 200px;
     /* border: 1px solid orange; */
     
     margin: 10px;
